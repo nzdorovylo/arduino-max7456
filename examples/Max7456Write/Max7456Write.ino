@@ -1200,9 +1200,7 @@ void setup() {
     Max7456::getCARACFromProgMem(
         tableOfAllCharacters, i,
         currentChar); //Because the table is too big for ram memory
-
-    osd->sendCharacter(currentChar, i & 0xF0,
-                       i & 0xF0); //We send currentChar at address i.
+    osd->sendCharacter(currentChar, i & 0x0f, (i & 0xf0) >> 4);
 
     for (int j = 0; j < 19; j++) //Rewind Serial.
       Serial.print(char(0x08));
