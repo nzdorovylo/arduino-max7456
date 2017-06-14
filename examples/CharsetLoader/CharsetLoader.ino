@@ -9,6 +9,8 @@
 
 Max7456 osd;
 
+int max7456CsPin = 6;
+
 void setup() {
   //Sample code : Write a complete table of character in the character memory of the max7456.
 
@@ -17,7 +19,7 @@ void setup() {
   Serial.begin(9600);
   SPI.begin();
   Serial.println(F("Initializing..."));
-  osd.init(6);
+  osd.init(max7456CsPin);
   Serial.println(F("Updating MAX7456 charset"));
   Serial.println(F("Are you sure? (y/n)"));
   bool goodChar = false;
