@@ -36,8 +36,7 @@ void setup() {
     if (found == 'n' || found == 'N') {
       Serial.println(F("------ NOTHING DONE ------"));
       Serial.println(F("please unplug your arduino"));
-      while (true)
-        ;
+      return;
     }
   }
 
@@ -61,5 +60,14 @@ void setup() {
 }
 
 void loop() {
-  //Nothing done here
+  osd.activateOSD();
+
+  for (int i = 0; i < 256; ++i) {
+    byte x = 3 + (i % 20);
+    byte y = 2 + (i / 20);
+    osd.printMax7456Char(i, x, y);
+  }
+  while (true) {
+    // Nothing to do…
+  }
 }
