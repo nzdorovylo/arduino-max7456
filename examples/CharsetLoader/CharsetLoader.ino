@@ -47,9 +47,7 @@ void setup() {
     dtostrf(i, 3, 0, number);
     Serial.print(number);
     Serial.println(F(" of 255"));
-    Max7456::getCARACFromProgMem(
-        tableOfAllCharacters, i,
-        currentChar); //Because the table is too big for ram memory
+    Max7456::getCARACFromProgMem(charset, i, currentChar);
     osd.sendCharacter(currentChar, i & 0x0f, (i & 0xf0) >> 4);
 
     for (int j = 0; j < 19; j++) //Rewind Serial.
