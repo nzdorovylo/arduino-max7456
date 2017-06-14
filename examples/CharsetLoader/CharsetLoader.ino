@@ -8,7 +8,8 @@
 #include "charset.h"
 
 Max7456 osd;
-
+// Change this according to your setup
+// Note: MinimOSD devices uses pin #6
 int max7456CsPin = 6;
 
 void setup() {
