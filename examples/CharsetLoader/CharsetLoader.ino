@@ -17,7 +17,7 @@ void setup() {
 
   charact currentChar; //represents a character as stored in memory (byte[54])
 
-  Serial.begin(9600);
+  Serial.begin(115200);
   SPI.begin();
   Serial.println(F("Initializing..."));
   osd.init(max7456CsPin);

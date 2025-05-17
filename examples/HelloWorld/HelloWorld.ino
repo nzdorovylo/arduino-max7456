@@ -4,6 +4,7 @@
 #define redLed 3
 #define greenLed 4
 
+int max7456CsPin = 6;
 Max7456       osd;
 unsigned long counter = 0;
 byte          tab[] = {0xC8, 0xC9};
@@ -11,7 +12,7 @@ byte          tab[] = {0xC8, 0xC9};
 void setup() {
   SPI.begin();
 
-  osd.init(10);
+  osd.init(max7456CsPin);
   osd.setDisplayOffsets(60, 18);
   osd.setBlinkParams(_8fields, _BT_BT);
 
